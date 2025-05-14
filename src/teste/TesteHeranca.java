@@ -7,7 +7,11 @@ package teste;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import modelo.Aluno;
+import modelo.AlunoConvenio;
 import modelo.AvaliacaoFisica;
+import modelo.Convenio;
+import modelo.Pessoa;
+import modelo.Plano;
 import modelo.Professor;
 
 
@@ -24,7 +28,16 @@ public class TesteHeranca {
         
         System.out.println(p.exibirDados());
         
-        Aluno a = new Aluno();
+        Plano plano1 = new Plano();
+        plano1.setNome("Básico");
+        plano1.setDescricao("Acesso a musculação liberada");
+        plano1.setValor(100);
+        
+        Convenio c = new Convenio();
+        c.setNome("IFSUL");
+        c.setDesconto(5);
+        
+        AlunoConvenio a = new AlunoConvenio(c);
         a.setNome("Vivente");
         a.setMatricula("123");
         DateTimeFormatter formato = 
@@ -32,6 +45,12 @@ public class TesteHeranca {
         
         a.setDataNascimento(LocalDate.parse("10/01/2008", 
                 formato));
+        
+         a.setDataMatricula(LocalDate.parse("10/04/2024", 
+                formato));
+        
+        a.setPlano(plano1);
+        
         
         
         AvaliacaoFisica av1 = new AvaliacaoFisica(a);
@@ -42,6 +61,12 @@ public class TesteHeranca {
         
         System.out.println("---- ");
         System.out.println(av1.exibirDados());
+        
+        
+//        Pessoa pes = new Pessoa("Teste");
+//        System.out.println("---- ");
+//        System.out.println(pes.exibirDados());
+        
         
     }
 }

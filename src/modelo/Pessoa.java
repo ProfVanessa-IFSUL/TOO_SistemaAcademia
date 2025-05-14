@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author vanessalagomachado
  */
-public class Pessoa {
+public abstract class Pessoa {
 
     // atributos
     private LocalDate dataNascimento;
@@ -22,11 +22,11 @@ public class Pessoa {
     
 
     //construtores
-    Pessoa(String n) {
+    public Pessoa(String n) {
         nome = n;
     }
 
-    Pessoa() {
+    public Pessoa() {
 
     }
 
