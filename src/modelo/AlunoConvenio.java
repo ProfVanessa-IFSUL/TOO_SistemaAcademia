@@ -62,6 +62,13 @@ public class AlunoConvenio extends Aluno{
 
         
     }
+
+    @Override
+    public String exibirDados() {
+        return super.exibirDados() 
+                + "\n" + "Convênio: "+convenio;
+    }
+    
     
     
     

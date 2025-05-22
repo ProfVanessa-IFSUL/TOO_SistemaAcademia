@@ -8,7 +8,7 @@ package modelo;
  *
  * @author vanessalagomachado
  */
-public class Professor extends Pessoa {
+public class Professor extends Funcionario {
 
     private String especializacao;
 
@@ -25,5 +25,10 @@ public class Professor extends Pessoa {
         String aux = super.exibirDados();
         aux += "\nEspecialização: "+especializacao;
         return aux;
+    }
+
+    @Override
+    public double calculaSalarioMes() {
+        return salario * 1.25;
     }
 }

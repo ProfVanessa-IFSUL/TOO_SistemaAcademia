@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author vanessalagomachado
  */
-public abstract class Pessoa {
+public abstract class Pessoa implements Exibivel{
 
     // atributos
     private LocalDate dataNascimento;

@@ -55,8 +55,10 @@ public class Aluno extends Pessoa {
         aux += "\nAvaliações Físicas Realizadas: "
                 + avaliacoes.size(); 
         
-        if(plano!=null)
+        if(plano!=null){
             aux += "\nValor Mensalidade: R$ "+valorMensalidade;
+            aux += "\nPlano: "+plano;
+        }
         
         aux += "\n";
         return aux;

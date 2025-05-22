@@ -10,6 +10,7 @@ import modelo.Aluno;
 import modelo.AlunoConvenio;
 import modelo.AvaliacaoFisica;
 import modelo.Convenio;
+import modelo.Impressora;
 import modelo.Pessoa;
 import modelo.Plano;
 import modelo.Professor;
@@ -26,12 +27,15 @@ public class TesteHeranca {
         p.setCpf("123.123.123-67");
         p.setEspecializacao("Musculação");
         
-        System.out.println(p.exibirDados());
+        //System.out.println(p.exibirDados());
         
         Plano plano1 = new Plano();
         plano1.setNome("Básico");
         plano1.setDescricao("Acesso a musculação liberada");
         plano1.setValor(100);
+        //System.out.println(plano1.exibirDados());
+        
+        
         
         Convenio c = new Convenio();
         c.setNome("IFSUL");
@@ -57,16 +61,19 @@ public class TesteHeranca {
         a.adicionarAvaliacao(av1);
         av1.setProfessor(p);
         
-        System.out.println(a.exibirDados());
+        //System.out.println(a.exibirDados());
         
-        System.out.println("---- ");
-        System.out.println(av1.exibirDados());
+        //System.out.println("---- ");
+        //System.out.println(av1.exibirDados());
         
         
 //        Pessoa pes = new Pessoa("Teste");
 //        System.out.println("---- ");
 //        System.out.println(pes.exibirDados());
-        
+        Impressora.imprimirDados(p); // p é uma instância de Professor
+        Impressora.imprimirDados(plano1); // plano1 é uma instância de Plano
+        Impressora.imprimirDados(av1); // av1 é uma instância de AvaliacaoFisica
+        Impressora.imprimirDados(a); // a é uma instância de Aluno
         
     }
 }

@@ -36,6 +36,11 @@ public class Convenio {
     public void setDesconto(double desconto) {
         this.desconto = desconto;
     }
+
+    @Override
+    public String toString() {
+        return nome + " - "+desconto+"%";
+    }
     
     
     

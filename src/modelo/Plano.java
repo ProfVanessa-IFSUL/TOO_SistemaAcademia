@@ -4,14 +4,17 @@
  */
 package modelo;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author vanessalagomachado
  */
-public class Plano {
+public class Plano implements Exibivel{
     private String nome;
     private String descricao;
     private double valor;
+    DecimalFormat formatoMoeda = new DecimalFormat("#,##0.00");
 
     public String getNome() {
         return nome;
@@ -36,6 +39,24 @@ public class Plano {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        
+        return nome + " - " +formatoMoeda.format(valor);
+    }
+
+    @Override
+    public String exibirDados() {
+        String aux = "Dados do Plano:";
+        aux += "\nNome: "+nome;
+        aux += "\nDescrição: "+descricao;
+        aux += "\nValor: R$ "+formatoMoeda.format(valor);
+        
+        return aux;
+                
+    }
+    
     
     
 }
